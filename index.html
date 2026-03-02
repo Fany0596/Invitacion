@@ -8,13 +8,23 @@
     <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Orbitron:wght@700&family=Montserrat:wght@700&display=swap" rel="stylesheet">
 
     <style>
-        /* Estilos generales */
+        /* Estilos generales y del FONDO DE LA PÁGINA COMPLETE */
         body {
             margin: 0;
             padding: 0;
             overflow: hidden; /* Evita el scroll durante el video */
             background-color: #000;
             font-family: 'Montserrat', sans-serif;
+            
+            /* --- MODIFICACIÓN: Imagen de fondo cubriendo TODA la página --- */
+            background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('fondo.jpg');
+            background-size: cover; /* Cubre todo el ancho y alto */
+            background-position: center; /* Centra la imagen */
+            background-attachment: fixed; /* Mantiene el fondo fijo al hacer scroll */
+            min-height: 100vh; /* Asegura que el body ocupe toda la altura visible */
+            display: flex; /* Usamos flexbox para centrar la tarjeta */
+            justify-content: center; /* Centra horizontalmente */
+            align-items: center; /* Centra verticalmente */
         }
 
         /* --- CONTENEDOR DEL VIDEO --- */
@@ -40,28 +50,28 @@
         /* --- CONTENEDOR DE LA INVITACIÓN --- */
         #invitation-content {
             display: none; /* Oculto hasta que termine el video */
-            min-height: 100vh;
+            width: 100%;
+            height: 100%;
             display: flex;
             justify-content: center;
             align-items: center;
-            background-color: #0b0d17; /* Color de respaldo oscuro */
         }
 
-        /* --- TARJETA CON FONDO PERSONALIZADO --- */
+        /* --- TARJETA DE TEXTO CENTRADA Y MÁS PEQUEÑA --- */
         .card {
             border: 4px solid #FFD700;
-            padding: 30px 20px;
+            padding: 25px;
             border-radius: 20px;
-            max-width: 400px;
-            width: 90%;
-            margin: 20px;
+            
+            /* --- MODIFICACIÓN: Tamaño de la tarjeta reducido --- */
+            max-width: 350px; /* Un poco más estrecha */
+            width: 85%; /* Ancho responsivo */
+            
+            background-color: rgba(0, 0, 0, 0.85); /* Fondo negro semi-transparente para legibilidad */
+            box-shadow: 0 0 30px rgba(255, 215, 0, 0.6); /* Brillo amarillo */
             text-align: center;
-            /* Aplicamos tu imagen de fondo con un filtro oscuro para leer bien el texto */
-            background-image: linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.75)), url('fondo.jpg');
-            background-size: cover;
-            background-position: center;
-            box-shadow: 0 0 30px rgba(255, 215, 0, 0.4);
             position: relative;
+            z-index: 10; /* Asegura que esté sobre el fondo */
         }
 
         /* --- EFECTO PARPADEO BATISEÑAL (H1) --- */
@@ -78,16 +88,16 @@
 
         h1 {
             font-family: 'Bangers', cursive;
-            font-size: 3.8em;
+            font-size: 3.2em;
             color: #FFD700;
             margin: 0 0 10px 0;
-            letter-spacing: 3px;
+            letter-spacing: 2px;
             animation: bat-flicker 2.5s infinite;
         }
 
         h2 {
             font-family: 'Orbitron', sans-serif;
-            font-size: 1.8em;
+            font-size: 1.6em;
             color: #fff;
             margin-bottom: 20px;
             text-transform: uppercase;
@@ -95,8 +105,8 @@
 
         p {
             color: #eee;
-            font-size: 1.1em;
-            margin: 10px 0;
+            font-size: 1em;
+            margin: 8px 0;
         }
 
         strong {
@@ -108,15 +118,16 @@
             display: block;
             background-color: #FFD700;
             color: #000;
-            padding: 15px;
-            margin: 20px auto;
+            padding: 12px;
+            margin: 18px auto;
             text-decoration: none;
             font-weight: bold;
             border-radius: 50px;
             text-transform: uppercase;
             transition: all 0.3s ease;
-            max-width: 250px;
+            max-width: 220px;
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+            font-size: 0.9em;
         }
 
         .btn:hover {
@@ -128,17 +139,17 @@
         }
 
         .audio-container {
-            margin-top: 25px;
+            margin-top: 20px;
             background: rgba(255, 215, 0, 0.1);
-            padding: 10px;
+            padding: 8px;
             border-radius: 10px;
         }
 
-        /* Responsividad para móviles */
-        @media (max-width: 480px) {
-            h1 { font-size: 2.8em; }
-            h2 { font-size: 1.4em; }
-            .card { padding: 20px 15px; }
+        /* Responsividad para móviles muy pequeños */
+        @media (max-width: 360px) {
+            h1 { font-size: 2.4em; }
+            h2 { font-size: 1.2em; }
+            .card { padding: 15px; }
         }
     </style>
 </head>
