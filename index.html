@@ -17,7 +17,7 @@
             font-family: 'Montserrat', sans-serif;
             
             /* --- MODIFICACIÓN: Imagen de fondo cubriendo TODA la página --- */
-            background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('fondo.jpg');
+            background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('fondo.jpg');
             background-size: cover; /* Cubre todo el ancho y alto */
             background-position: center top; /* Centra la imagen */
             background-attachment: fixed; /* Mantiene el fondo fijo al hacer scroll */
@@ -64,16 +64,18 @@
 
         /* --- TARJETA DE TEXTO CENTRADA Y MÁS PEQUEÑA --- */
         .card {
-            border: 4px solid #FFD700;
+            border: 4px solid #FFD700; /* Borde interior dorado */
+  outline: 2px solid #fff; /* Borde exterior blanco para contraste metálico */
+  outline-offset: 2px; /* Espacio entre los dos bordes */
             padding: 15px;
             border-radius: 20px;
             
             /* --- MODIFICACIÓN: Tamaño de la tarjeta reducido --- */
             max-width: 160px; /* Un poco más estrecha */
-            width: 60%; /* Ancho responsivo */
+            width: 65%; /* Ancho responsivo */
             
-            background-color: rgba(0, 0, 0, 0.55); /* Fondo negro semi-transparente para legibilidad */
-            box-shadow: 0 0 30px rgba(255, 215, 0, 0.6); /* Brillo amarillo */
+            background-color: rgba(0, 0, 0, 0.45); /* Fondo negro semi-transparente para legibilidad */
+            box-shadow: 0 0 40px rgba(255, 215, 0, 0.8); /* Brillo amarillo */
             text-align: center;
             position: relative;
  	    margin-top: 70px; /* Esto empujará el cuadro hacia abajo */
@@ -124,8 +126,8 @@
             display: block;
             background-color: #FFD700;
             color: #000;
-            padding: 10px;
-            margin: 13px auto;
+            padding: 8px 15px;
+            margin: 12px auto;
             text-decoration: none;
             font-weight: bold;
             border-radius: 50px;
@@ -133,7 +135,7 @@
             transition: all 0.3s ease;
             max-width: 150px;
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
-            font-size: 0.9em;
+            font-size: 0.75em;
         }
 
         .btn:hover {
