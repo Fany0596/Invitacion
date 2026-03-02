@@ -21,7 +21,12 @@
             background-size: cover; /* Cubre todo el ancho y alto */
             background-position: center; /* Centra la imagen */
             background-attachment: fixed; /* Mantiene el fondo fijo al hacer scroll */
-            min-height: 100vh; /* Asegura que el body ocupe toda la altura visible */
+           min-height: 100vh; /* Respaldo para navegadores viejos */
+    min-height: 100svh; /* La solución para móviles modernos */
+    display: flex;
+    flex-direction: column; /* Ayuda a que el margen superior funcione mejor */
+    justify-content: flex-start; /* Cambiamos de center a flex-start para controlar el margen */
+    align-items: center;
             display: flex; /* Usamos flexbox para centrar la tarjeta */
             justify-content: center; /* Centra horizontalmente */
             align-items: center; /* Centra verticalmente */
@@ -71,7 +76,7 @@
             box-shadow: 0 0 30px rgba(255, 215, 0, 0.6); /* Brillo amarillo */
             text-align: center;
             position: relative;
- 	    margin-top: 100px; /* Esto empujará el cuadro hacia abajo */
+ 	    margin-top: 70px; /* Esto empujará el cuadro hacia abajo */
             z-index: 10; /* Asegura que esté sobre el fondo */
         }
 
